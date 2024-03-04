@@ -1,11 +1,11 @@
-import Navbars from "../Component/Navbar"
+import LayOut from "../Component/LayOut"
 
 const Home = () =>{
+
     return(
-        <div>
-            <Navbars/>
-            <h1>Home</h1>
-        </div>
+        <LayOut>
+            <h1 className="text-center mt-5">Welcome</h1>
+        </LayOut>
     )
 }
 

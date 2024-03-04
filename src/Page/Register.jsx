@@ -1,9 +1,10 @@
 import { Container,Form,Button } from "react-bootstrap"
 import './index.css'
+import LayOut from "../Component/LayOut"
 
 const Register = () => {
     return (
-        <div>
+        <LayOut>
             <Container className="mt-5 p-0 bg-body-tertiary border border-dark rounded" style={{width:"400px"}}>
                 <Form>  
                 <Container className="p-0 m-0">
@@ -25,15 +26,16 @@ const Register = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
-                        <div className="text-center">
+                        <div className="text-center py-3">
                             <Button variant="primary" type="submit">
                                 Register
                             </Button>
                         </div>
+                        <p className="text-center">Already have an account? <a href="/login">Login</a></p>
                     </Container>
                 </Form>
             </Container>
-        </div>
+        </LayOut>
     )
 }
 

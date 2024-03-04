@@ -1,20 +1,11 @@
-import { useState } from 'react'
-import Home from './Page/Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
+import { routeList } from './Router/Route'
 
 
 function App() {
-
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />}/>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+  const element = useRoutes(routeList)
+  return element
 }
 
 export default App

@@ -1,41 +1,36 @@
-import { useState } from "react"
 import { Container, Nav, Navbar,Button } from "react-bootstrap"
-import Login from "./Login"
-import Register from "./Register"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { useNavigate } from "react-router-dom"
 
 
 const Navbars = () => {
+    const Navigate = useNavigate();
+    const access = localStorage.getItem("access");
 
-    const [login,setLogin] = useState(false)
-    const [register,setRegister] = useState(false)
-
-    const handleLogin = () =>{
-        setLogin(!login);
-    }
-
-    const handleRegister = () =>{
-        setRegister(!register);
+    const logOut = () =>{
+        localStorage.removeItem("access");
+        Navigate("/")
     }
 
     return (
-        <div>
+        <header>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">VcharShop</Navbar.Brand>
+                    <Navbar.Brand href="/">Account</Navbar.Brand>
                     <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/user">UserList</Nav.Link>
                     </Nav>
                     <div>
-                        <Button variant="outline-secondary" onClick={handleLogin}><i class="bi bi-person-fill"></i></Button>
+                        {access?(
+                            <Button variant="outline-secondary px-3"><a onClick={logOut}><i class="bi bi-box-arrow-right"></i></a></Button>
+                        ):(
+                            <Button variant="outline-secondary px-3"><a href="/login"><i class="bi bi-person-fill text-muted"></i></a></Button>
+                        )}
                     </div>
                 </Container>
             </Navbar>
-        {login && <Login/>}
-        {register && <Register/>}
-        </div>
+        </header>
     )
 }
 
