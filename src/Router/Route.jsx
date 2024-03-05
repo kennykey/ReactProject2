@@ -4,7 +4,6 @@ import Register from '../Page/Register'
 import SingleUser from '../Page/SingleUser';
 import ListUser from '../Page/ListUser';
 import RouteProtected from './RouteProtected';
-// import RouteProtected from '../Router/RouteProtected'
 
 export const routeList = [
     {

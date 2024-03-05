@@ -33,7 +33,7 @@ const SingleUser = () =>{
                 navigate("/")
             })
             .catch((err) =>{
-                console.log(err);
+                console.log(err,"Missing password");
             })
     }
 
