@@ -4,6 +4,7 @@ import Register from '../Page/Register'
 import SingleUser from '../Page/SingleUser';
 import ListUser from '../Page/ListUser';
 import RouteProtected from './RouteProtected';
+import Add from '../Page/Add';
 
 export const routeList = [
     {
@@ -31,6 +32,14 @@ export const routeList = [
         element: (
                 <RouteProtected>
                     <ListUser/>
+                </RouteProtected>
+        ),
+    },
+    {
+        path: '/add',
+        element: (
+                <RouteProtected>
+                    <Add/>
                 </RouteProtected>
         ),
     },

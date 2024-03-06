@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
+import './index.css'
 import LayOut from "../Component/LayOut"
 import { useEffect,useState } from "react"
 import axios from "axios"
@@ -50,8 +51,8 @@ const SingleUser = () =>{
                 <h5>Pantone Value: {userDetail.pantone_value}</h5>
                 <h5>Color: {userDetail.color}</h5>
                 <div style={{textAlign:"center",marginTop:"10px"}}>
-                    <button onClick={DeleteUser} style={{padding:"5px 10px",border:"none",color:"white",backgroundColor:"red", margin:"20px"}}>Delete</button>
-                    <button onClick={()=> navigate(-1)} style={{padding:"5px 10px", border:"none",color:"white",backgroundColor:"blue", margin:"20px"}}>Back</button>
+                    <button onClick={DeleteUser} className="del">Delete</button>
+                    <button onClick={()=> navigate(-1)}>Back</button>
                 </div>
             </div>
         </LayOut>

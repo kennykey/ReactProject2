@@ -1,3 +1,30 @@
 img{
     width: 399px;
 }
+
+button{
+    padding: 7px 18px;
+    border: none;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 6px;
+
+}
+
+button:hover{
+    background-color: cornflowerblue;
+}
+
+.del{
+    padding: 7px 18px;
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    margin: 20px;
+    border-radius: 6px;
+    
+}
+
+.del:hover{
+    background-color: rgb(192, 96, 96);
+}
