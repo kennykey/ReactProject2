@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 const Add = () => {
     const Navigate = useNavigate();
     const[addUser,setUser] = useState({
-        name:"",
-        year:"",
-        pantoneValue:"",
-        color:"",
+        email:"",
+        first:"",
+        last:"",
+        image:"",
     });
 
     const handleChange = (e) =>{
@@ -23,17 +23,25 @@ const Add = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         const payLoad = {
-            name: addUser.name,
-            year: addUser.year,
-            pantoneValue: addUser.pantone_value,
-            color: addUser.color,
+            email: addUser.email,
+            first: addUser.first_name,
+            last: addUser.last_name,
+            image: addUser.avatar,
         }
 
+        const token = localStorage.getItem("access");
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+
+
         axios
-            .post('https://reqres.in/api/unknown',payLoad)
+            .post('https://reqres.in/api/users',payLoad,config)
             .then((res)=> {
                 alert('Data added successfull')
-                // Navigate('/user');
+                Navigate('/user');
                 setUser(res)
             })
             .catch((err)=> console.log(err))
@@ -45,21 +53,21 @@ const Add = () => {
             <Container className="mt-5 p-0 bg-body-tertiary border border-dark rounded" style={{width:"400px"}}>
                 <Form onSubmit={handleSubmit}>
                     <Container className="p-5">
-                        <Form.Group className="mb-3" controlId="formBasicName">
-                            <Form.Label>Name:</Form.Label>
-                            <Form.Control type="text" name="name" placeholder="Name" onChange={handleChange}/>
+                        <Form.Group className="mb-3" controlId="formBasicEmai">
+                            <Form.Label>Email:</Form.Label>
+                            <Form.Control type="email" name="email" placeholder="Email" onChange={handleChange}/>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicYear">
-                            <Form.Label>Year:</Form.Label>
-                            <Form.Control type="number" name="year" placeholder="Year" onChange={handleChange}/>
+                        <Form.Group className="mb-3" controlId="formBasicFirst">
+                            <Form.Label>First Name:</Form.Label>
+                            <Form.Control type="text" name="first" placeholder="First Name" onChange={handleChange}/>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicPantoneValue">
-                            <Form.Label>Pantone Value:</Form.Label>
-                            <Form.Control type="text" name="pantoneValue" placeholder="Pantone Value" onChange={handleChange}/>
+                        <Form.Group className="mb-3" controlId="formBasicLast">
+                            <Form.Label>Last Name:</Form.Label>
+                            <Form.Control type="text" name="last" placeholder="Last Name" onChange={handleChange}/>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicColor">
-                            <Form.Label>Color:</Form.Label>
-                            <Form.Control type="text" name="color" placeholder="Color" onChange={handleChange}/>
+                        <Form.Group className="mb-3" controlId="formBasicImage">
+                            <Form.Label>Image:</Form.Label>
+                            <Form.Control type="url" name="image" placeholder="Image" onChange={handleChange}/>
                         </Form.Group>
                         <div className="text-center py-3">
                             <Button variant="primary" type="submit" className="mx-4">

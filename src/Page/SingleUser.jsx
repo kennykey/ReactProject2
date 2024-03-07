@@ -11,7 +11,7 @@ const SingleUser = () =>{
 
     const handleUser = () =>{
         axios
-            .get(`https://reqres.in/api/unknown/${id}`)
+            .get(`https://reqres.in/api/users/${id}`)
             .then((res) =>{
                 setUserDetail(res?.data?.data)
             })
@@ -29,7 +29,7 @@ const SingleUser = () =>{
         };
 
         axios
-            .delete(`https://reqres.in/api/unknown/${id}`,config)
+            .delete(`https://reqres.in/api/users/${id}`,config)
             .then((res) =>{
                 navigate("/")
             })
@@ -45,11 +45,21 @@ const SingleUser = () =>{
     return(
         <LayOut>
             <div style={{border:"1px solid black",margin:"50px",padding:"10px"}}>
-                <h5>ID: {userDetail.id}</h5>
-                <h5>Name: {userDetail.name}</h5>
-                <h5>Year: {userDetail.year}</h5>
-                <h5>Pantone Value: {userDetail.pantone_value}</h5>
-                <h5>Color: {userDetail.color}</h5>
+                <div style={{display:"flex"}}>
+                    <div>
+                        <img src={userDetail.avatar} alt="avatar" className="avatar"/>
+                    </div>
+                    <div style={{padding:"15px 0"}}>
+                        <h5>ID: {userDetail.id}</h5>
+                        <h5>Email: {userDetail.email}</h5>
+                        <h5>First Name: {userDetail.first_name}</h5>
+                        <h5>Last Name: {userDetail.last_name}</h5>
+                        <p><span className="fw-bold fs-5">Introduction:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate 
+                        ipsum doloribus eos totam asperiores in nemo debitis obcaecati ratione facere! Vel laudantium sint qui eius alias officia, 
+                        libero amet velit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, esse? Lorem ipsum dolor sit amet 
+                        consectetur, adipisicing elit. Veritatis quos culpa quaerat amet magnam minima adipisci dolore illo nam. Nobis.lorem</p>
+                    </div>  
+                </div>              
                 <div style={{textAlign:"center",marginTop:"10px"}}>
                     <button onClick={DeleteUser} className="del">Delete</button>
                     <button onClick={()=> navigate(-1)}>Back</button>

@@ -18,7 +18,7 @@ const ListUser = () =>{
 
     const handleUser = () =>{
         axios
-            .get(`https://reqres.in/api/unknown?page=${pagination.currentPage}`)
+            .get(`https://reqres.in/api/users?page=${pagination.currentPage}`)
             .then((res) =>{
                 console.log(res.data.data)
                 setUsers(res.data.data)
@@ -63,12 +63,15 @@ const ListUser = () =>{
             <div className="text-end" style={{margin:"70px 110px 0"}}><Link to={'/add'}><button>Add</button></Link></div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)", margin:"0 100px"}}>
                 {users.map((user)=>(
-                    <div style={{border:"1px solid black",margin:"10px",padding:"10px"}}>
-                        <h5>Name: {user.name}</h5>
-                        <h5>Year: {user.year}</h5>
-                        <div style={{textAlign:"center"}}>
+                    <div style={{border:"1px solid black",margin:"10px",padding:"10px"}}  className="text-center">
+                        <img src={user.avatar} alt="avatar" className="imgList pb-3"/>
+                        <h5>{user.email}</h5>
+                        <div className="py-3">
                             <Link to={`/user/${user.id}`}>
                                 <button>Detail</button>
+                            </Link>
+                            <Link to={`/update/${user.id}`}>
+                                <button className="edit">Edit</button>
                             </Link>
                         </div>
                     </div>

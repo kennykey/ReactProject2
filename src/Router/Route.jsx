@@ -5,6 +5,7 @@ import SingleUser from '../Page/SingleUser';
 import ListUser from '../Page/ListUser';
 import RouteProtected from './RouteProtected';
 import Add from '../Page/Add';
+import Update from '../Page/Update';
 
 export const routeList = [
     {
@@ -40,6 +41,14 @@ export const routeList = [
         element: (
                 <RouteProtected>
                     <Add/>
+                </RouteProtected>
+        ),
+    },
+    {
+        path: '/update/:id',
+        element: (
+                <RouteProtected>
+                    <Update/>
                 </RouteProtected>
         ),
     },
