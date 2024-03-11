@@ -1,7 +1,8 @@
-import { Container, Nav, Navbar,Button } from "react-bootstrap"
+import { Navbar,Container,Nav } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { useNavigate } from "react-router-dom"
-
 
 const Navbars = () => {
     const Navigate = useNavigate();
@@ -11,27 +12,29 @@ const Navbars = () => {
         localStorage.removeItem("access");
         Navigate("/")
     }
-
-    return (
-        <header>
+    return ( 
+        <div>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/">Account</Navbar.Brand>
-                    <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/user">UserList</Nav.Link>
-                    </Nav>
-                    <div>
+                <Nav className="ms-auto">
+                    <div className="px-3">
                         {access?(
-                            <Button variant="outline-secondary px-3"><a onClick={logOut}><i class="bi bi-box-arrow-right"></i></a></Button>
+                            <a onClick={logOut} aria-current="page" className='text-decoration-none'>
+                                <Button variant="outline-secondary"><i class="bi bi-box-arrow-right"></i></Button>
+                                <span className='text-white fs-5 d-none d-sm-inline'>LogOut</span>
+                            </a>
                         ):(
-                            <Button variant="outline-secondary px-3"><a href="/login"><i class="bi bi-person-fill text-muted"></i></a></Button>
+                            <a href="/login" aria-current="page" className='text-decoration-none'>
+                                <Button variant="outline-secondary"><i class="bi bi-person-fill"></i></Button>
+                                <span className='text-white fs-5 d-none d-sm-inline'>Login</span>
+                            </a>
                         )}
                     </div>
+                </Nav>
                 </Container>
             </Navbar>
-        </header>
-    )
+        </div>
+     );
 }
-
-export default Navbars
+ 
+export default Navbars;

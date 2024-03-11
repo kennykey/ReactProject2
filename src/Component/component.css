@@ -1,6 +1,17 @@
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+
 footer p{
     text-align: center;
     font-size: 1rem;
-    margin: 0;
-    padding: 0;
+}
+
+.nav-pills li a:hover{
+    background-color: rgb(68, 68, 185);
+}
+
+.sidebar .nav{
+    padding: 0 !important;
 }

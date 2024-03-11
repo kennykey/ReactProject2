@@ -34,9 +34,13 @@ const Register = () => {
         try {
             const res = await axios 
                         .post('https://reqres.in/api/register', payLoad)
-                        .then((res) => setRegis(res.data))
+                        .then((res) => setRegis(res.data));
+                        console.log(res.data);
+                        alert('Register successfull')
+                        
         } catch (err) {
-            console.log(err,"Missing password");
+            console.log(err.response.data);
+                alert("Invalid Username or Password")
         }
     }
 

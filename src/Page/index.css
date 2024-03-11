@@ -50,3 +50,26 @@ button:hover{
     height: 300px;
     margin: 15px 100px;
 }
+
+
+.layList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 100px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .layList{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 100px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .layList{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 100px;
+    }
+}

@@ -42,9 +42,12 @@ const Add = () => {
             .then((res)=> {
                 alert('Data added successfull')
                 Navigate('/user');
-                setUser(res)
+                setUser(res.data.data)
             })
-            .catch((err)=> console.log(err))
+            .catch((err)=> {
+                alert("Data not found");
+                console.log(err.response.data);
+            })
     }
 
     console.log(addUser);

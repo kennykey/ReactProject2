@@ -1,15 +1,20 @@
 import Footer from "./Footer";
-import Navbars from "./Navbar";
 import React from "react";
+import SideBar from "./SideBar";
+import Navbars from "./Navbar";
+import './component.css'
 
 const LayOut = ({children}) => {
     return ( 
-        <div>
-            <Navbars/>
-            <div style={{minHeight:"100vh"}}>
-                {children}
+        <div className="d-flex">
+            <div className="col-auto">
+                <SideBar/>
             </div>
-            <Footer/>
+            <div style={{width:"100%"}}>
+                <Navbars/>
+                {children}
+                <Footer/>
+            </div>
         </div>
      );
 }

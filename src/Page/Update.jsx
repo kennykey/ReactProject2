@@ -20,7 +20,10 @@ const Update = () => {
         axios
             .get(`https://reqres.in/api/users/${id}`,config)
             .then((res)=>setData(res?.data?.data))
-            .catch((err)=>console.log(err))
+            .catch((err)=>{
+                alert("Data not found");
+                console.log(err.response.data);
+            })
 
     }
 

@@ -61,7 +61,7 @@ const ListUser = () =>{
     return(
         <LayOut>
             <div className="text-end" style={{margin:"70px 110px 0"}}><Link to={'/add'}><button>Add</button></Link></div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)", margin:"0 100px"}}>
+            <div className="layList">
                 {users.map((user)=>(
                     <div style={{border:"1px solid black",margin:"10px",padding:"10px"}}  className="text-center">
                         <img src={user.avatar} alt="avatar" className="imgList pb-3"/>
@@ -81,6 +81,7 @@ const ListUser = () =>{
                 <button onClick={handleBack} disabled={pagination.previousPage === 0}>
                     Prev
                 </button>
+            
                 <button onClick={handleNext} disabled={pagination.nextPage === 0}>
                     Next
                 </button>
