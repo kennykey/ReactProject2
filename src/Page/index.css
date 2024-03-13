@@ -51,6 +51,10 @@ button:hover{
     margin: 15px 100px;
 }
 
+.icon{
+    font-size: 40px;
+    color: blue;
+}
 
 .layList{
     display: grid;

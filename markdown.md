@@ -9,9 +9,21 @@ library List
 -bootstap
 -API
 -React
+-React Chart Js
+-library icons
 
 fitur list
 -API Get, Post, Delete
 -Pagination
 -Router
 -Login
+-Chart
+
+ToDO
+-cek userList
+-cek Detail
+-Delete User
+-Add User
+-Login
+-Register
+-Cek Chart User

@@ -34,15 +34,15 @@ const SideBar = () => {
                         </a>
                     </li>
                     <li className='nav-item fs-5 my-1 py-sm-0 py-2'>
-                        <a href="#" className='nav-link text-white' aria-current="page">
+                        <a href="/about" className='nav-link text-white' aria-current="page">
                             <i class="bi bi-info-square"></i>
                             <span className='ms-2 d-none d-sm-inline'>About</span>
                         </a>
                     </li>
                     <li className='nav-item fs-5 my-1 py-sm-0 py-2'>
-                        <a href="#" className='nav-link text-white' aria-current="page">
-                            <i class="bi bi-person-square"></i>
-                            <span className='ms-2 d-none d-sm-inline'>Contact</span>
+                        <a href="/chart" className='nav-link text-white' aria-current="page">
+                            <i class="bi bi-bar-chart-fill"></i>
+                            <span className='ms-2 d-none d-sm-inline'>Chart</span>
                         </a>
                     </li>
                 </ul>

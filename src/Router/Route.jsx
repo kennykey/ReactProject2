@@ -6,6 +6,8 @@ import ListUser from '../Page/ListUser';
 import RouteProtected from './RouteProtected';
 import Add from '../Page/Add';
 import Update from '../Page/Update';
+import About from '../Page/About';
+import Chart from '../Page/Chart';
 
 export const routeList = [
     {
@@ -15,6 +17,16 @@ export const routeList = [
     {
         path: '/login',
         element: <Login/>,
+    },
+    {
+        path: '/chart',
+        element: <RouteProtected>
+                    <Chart/>
+                </RouteProtected>,
+    },
+    {
+        path: '/about',
+        element: <About/>,
     },
     {
         path: '/register',
