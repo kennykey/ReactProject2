@@ -19,7 +19,7 @@ const Home = () =>{
                         </div>
                     </div>
                     <div className="text-center col-md-5 my-5 py-4">
-                        <img className="img-fluid" src="/public/hero-img.png" alt="art"/>
+                        <img className="img-fluid" src="./public/hero-img.png" alt="art"/>
                     </div>
                 </div>
             </div>
@@ -28,19 +28,19 @@ const Home = () =>{
                 <div className="container d-flex justify-content-between p-5" style={{width:"70%"}}>
                     <div class="card bg-body-tertiary border-0">
                         <div class="card-body">
-                        <img src="/public/shield.png" alt="Trust" style={{width:"100px"}}/>
+                        <img src="./public/shield.png" alt="Trust" style={{width:"100px"}}/>
                         </div>
                         <h3 className="text-center text-muted">Trust</h3>
                     </div>
                     <div class="card bg-body-tertiary border-0">
                         <div class="card-body">
-                        <img src="/public/conversation.png" alt="Conversation" style={{width:"100px"}}/>
+                        <img src="./public/conversation.png" alt="Conversation" style={{width:"100px"}}/>
                         </div>
                         <h3 className="text-center text-muted">Communication</h3>
                     </div>
                     <div class="card bg-body-tertiary border-0">
                         <div class="card-body">
-                        <img src="/public/hand.png" alt="Fun" style={{width:"100px"}}/>
+                        <img src="./public/hand.png" alt="Fun" style={{width:"100px"}}/>
                         </div>
                         <h3 className="text-center text-muted">Fun & Easy</h3>
                     </div>
