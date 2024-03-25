@@ -50,7 +50,7 @@ const Register = () => {
             <Container className="my-5 p-0 bg-body-tertiary border border-dark rounded" style={{width:"400px"}}>
                 <Form>  
                 <Container className="p-0 m-0">
-                    <img src={"./public/premium.avif"} alt="LoginIMG" className="rounded-top imgUser"/>
+                    <img src="/premium.avif" alt="LoginIMG" className="rounded-top imgUser"/>
                 </Container>
                     <Container className="p-5">
                         <Form.Group className="mb-3" controlId="formBasicEmail">

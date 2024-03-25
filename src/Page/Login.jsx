@@ -42,14 +42,13 @@ const Login = () => {
             })
             .catch((error) =>
                 console.log(error.response.data));
-                alert("Invalid Username or Password")
     }
 
     return (
         <LayOut>
             <Container className="mt-5 p-0 bg-body-tertiary border border-dark rounded" style={{width:"400px"}}>
                 <Form onSubmit={handleLogin}>
-                <Container className="p-0 m-0"><img src={"./public/premium.avif" }alt="LoginIMG" className="rounded-top imgUser"/></Container>
+                <Container className="p-0 m-0"><img src="/premium.avif" alt="LoginIMG" className="rounded-top imgUser"/></Container>
                     <Container className="p-5">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>

@@ -22,7 +22,7 @@ const About = () => {
 
             <div className="container row">
                     <div className="col-md-5 d-flex justify-content-center">
-                        <img src="./public/inspiration.png" alt="inspiration"/>
+                        <img src="/inspiration.png" alt="inspiration" style={{width:"500px"}}/>
                     </div>
                     <div className="col-md-7 d-flex">
                         <div className="row d-flex justify-content-center pt-5">
