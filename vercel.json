@@ -1,0 +1,40 @@
+{
+    "route":[
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/login",
+            "dest": "/"
+        },
+        {
+            "src": "/chart",
+            "dest": "/"
+        },
+        {
+            "src": "/about",
+            "dest": "/"
+        },
+        {
+            "src": "/register",
+            "dest": "/"
+        },
+        {
+            "src": "/user/:id",
+            "dest":"/"
+        },
+        {
+            "src": "/user",
+            "dest": "/"
+        },
+        {
+            "src": "/add",
+            "dest": "/"
+        },
+        {
+            "src": "/update/:id",
+            "dest": "/"
+        }
+    ]
+}
